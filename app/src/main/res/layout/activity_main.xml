@@ -96,7 +96,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:contentDescription="@string/heart"
-        android:src="@drawable/heart_empty_24dp"
+        android:src="@drawable/heart_white_24dp"
         app:layout_constraintBottom_toTopOf="@id/barrier2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/barrier1" />

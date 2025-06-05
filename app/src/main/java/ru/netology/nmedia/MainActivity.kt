@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
             liked.text = post.likes.toString()
 
             if (post.likeByMe){
-                heart.setImageResource(R.drawable.red_heart24)
+                heart.setImageResource(R.drawable.heart_red_24dp)
             }
 
             heart.setOnClickListener {
@@ -37,9 +37,9 @@ class MainActivity : AppCompatActivity() {
 
                 heart.setImageResource(
                     if (post.likeByMe){
-                        R.drawable.red_heart24
+                        R.drawable.heart_red_24dp
                     } else {
-                        R.drawable.heart_empty_24dp
+                        R.drawable.heart_white_24dp
                     }
                 )
             }
