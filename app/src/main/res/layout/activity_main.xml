@@ -15,12 +15,13 @@
         android:layout_height="@dimen/avatar_size"
         android:layout_marginHorizontal="@dimen/common_space"
         android:contentDescription="@string/description_post_author_avatar"
+        android:src="@drawable/ic_netology"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@sample/posts_avatars" />
 
     <TextView
-        android:id="@+id/authorName"
+        android:id="@+id/author"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/common_space"
@@ -42,7 +43,7 @@
         android:layout_marginHorizontal="@dimen/common_space"
         app:layout_constraintBottom_toBottomOf="@+id/avatar"
         app:layout_constraintStart_toEndOf="@+id/avatar"
-        app:layout_constraintTop_toBottomOf="@+id/authorName"
+        app:layout_constraintTop_toBottomOf="@+id/author"
         tools:text="@sample/posts.json/data/published" />
 
     <ImageView
@@ -63,7 +64,7 @@
         app:constraint_referenced_ids="avatar, published, menu" />
 
     <TextView
-        android:id="@+id/context"
+        android:id="@+id/content"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/common_space"
@@ -79,7 +80,7 @@
         android:layout_height="wrap_content"
         app:barrierDirection="bottom"
         app:barrierMargin="@dimen/common_space"
-        app:constraint_referenced_ids="context" />
+        app:constraint_referenced_ids="content" />
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier2"
@@ -87,9 +88,9 @@
         android:layout_height="wrap_content"
         app:barrierDirection="bottom"
         app:barrierMargin="64dp"
-        app:constraint_referenced_ids="context" />
+        app:constraint_referenced_ids="content" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/heart"
         android:layout_width="@dimen/common_space"
         android:layout_height="@dimen/common_space"
