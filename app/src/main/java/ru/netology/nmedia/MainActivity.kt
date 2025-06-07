@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
             content.text = post.content
             published.text = post.published
             liked.text = post.likes.toString()
+            shared.text = post.shareds.toString()
 
             if (post.likeByMe){
                 heart.setImageResource(R.drawable.heart_red_24dp)
@@ -42,6 +43,14 @@ class MainActivity : AppCompatActivity() {
                         R.drawable.heart_white_24dp
                     }
                 )
+                post.likes += if (post.likeByMe) 1 else -1
+                liked.text = post.likes.toString()
+            }
+
+            share.setOnClickListener {
+                post.shareds += 1
+                shared.text = post.shareds.toString()
+
             }
         }
     }

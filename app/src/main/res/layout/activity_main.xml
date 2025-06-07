@@ -112,7 +112,7 @@
         app:layout_constraintStart_toEndOf="@id/heart"
         app:layout_constraintTop_toTopOf="@id/barrier1" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/share"
         android:layout_width="@dimen/common_space"
         android:layout_height="@dimen/common_space"
