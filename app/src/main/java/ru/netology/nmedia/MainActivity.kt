@@ -22,14 +22,15 @@ class MainActivity : AppCompatActivity() {
                     " целиться выше, бежать быстрее. Наша миссия — помочь встать на путь роста" +
                     " и начать цепочку перемен → http://netolo.gy/fyb\""
         )
-        with(binding){
+        with(binding) {
             author.text = post.author
             content.text = post.content
             published.text = post.published
-            liked.text = post.likes.toString()
-            shared.text = post.shares.toString()
+            liked.text = quantityWritingRule(post.likes)
+            shared.text = quantityWritingRule(post.shares)
+            looked.text = quantityWritingRule(post.looks)
 
-            if (post.likeByMe){
+            if (post.likeByMe) {
                 heart.setImageResource(R.drawable.heart_red_24dp)
             }
 
@@ -37,21 +38,52 @@ class MainActivity : AppCompatActivity() {
                 post.likeByMe = !post.likeByMe
 
                 heart.setImageResource(
-                    if (post.likeByMe){
+                    if (post.likeByMe) {
                         R.drawable.heart_red_24dp
                     } else {
                         R.drawable.heart_white_24dp
                     }
                 )
                 post.likes += if (post.likeByMe) 1 else -1
-                liked.text = post.likes.toString()
+                liked.text = quantityWritingRule(post.likes)
             }
 
             share.setOnClickListener {
                 post.shares += 1
-                shared.text = post.shares.toString()
-
+                shared.text = quantityWritingRule(post.shares)
             }
+
+            eye.setOnClickListener {
+                post.looks += 1
+                looked.text = quantityWritingRule(post.looks)
+            }
+        }
+    }
+
+    private fun quantityWritingRule(number: Int): String {
+        var num: Int = number
+        var numHundred: Int
+        var numThousand: Int
+        var numMill: Int
+        var numHundOfThous: Int
+        if (num < 1000) {
+            return num.toString()
+        } else if (num < 10000) {
+            numThousand = num / 1000
+            numHundred = (num - numThousand * 1000) / 100
+            if (numHundred == 0) {
+                return numThousand.toString() + "K"
+            } else return numThousand.toString() + "." + numHundred + "K"
+        } else if (num < 1000000) {
+            numThousand = num / 1000
+            return numThousand.toString() + "K"
+        } else {
+            numMill = num / 1000000
+            numHundOfThous = (num - numMill * 1000000) / 100000
+            if (numHundOfThous == 0) {
+                return numMill.toString() + "M"
+            } else return numMill.toString() + "." + numHundOfThous + "M"
+
         }
     }
 }

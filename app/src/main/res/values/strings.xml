@@ -5,9 +5,9 @@
     <string name="description_post_author_avatar">Post author avatar</string>
     <string name="description_author_name">Author name</string>
     <string name="menu">Menu</string>
-    <string name="liked" translatable="false">5</string>
-    <string name="shared" translatable="false">10</string>
-    <string name="looked" translatable="false">15</string>
+    <string name="liked" translatable="false">1999</string>
+    <string name="shared" translatable="false">1999</string>
+    <string name="looked" translatable="false">1999</string>
     <string name="heart">Icon heart</string>
     <string name="share">Icon share</string>
     <string name="eye">Icon eye</string>
