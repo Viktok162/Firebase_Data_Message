@@ -57,6 +57,16 @@ class MainActivity : AppCompatActivity() {
                 post.looks += 1
                 looked.text = quantityWritingRule(post.looks)
             }
+//          Test start
+//            binding.root.setOnClickListener{
+//                val test = post.shares
+//            }
+//
+//            avatar.setOnClickListener{
+//                val test = post.shares
+//            }
+//          Test finish
+//
         }
     }
 
