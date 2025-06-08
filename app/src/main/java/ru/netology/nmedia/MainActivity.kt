@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
             return num.toString()
         } else if (num < 10000) {
             numThousand = num / 1000
-            numHundred = (num - numThousand * 1000) / 100
+            numHundred = (num % 1000) / 100
             if (numHundred == 0) {
                 return numThousand.toString() + "K"
             } else return numThousand.toString() + "." + numHundred + "K"
@@ -89,7 +89,7 @@ class MainActivity : AppCompatActivity() {
             return numThousand.toString() + "K"
         } else {
             numMill = num / 1000000
-            numHundOfThous = (num - numMill * 1000000) / 100000
+            numHundOfThous = (num % 1000000) / 100000
             if (numHundOfThous == 0) {
                 return numMill.toString() + "M"
             } else return numMill.toString() + "." + numHundOfThous + "M"
