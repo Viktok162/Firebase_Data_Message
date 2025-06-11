@@ -1,42 +1,27 @@
 package ru.netology.nmedia
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import ru.netology.nmedia.databinding.ActivityMainBinding
-import ru.netology.nmedia.dto.Post
 
 class MainActivity : AppCompatActivity() {
+
+    private val viewModel: PostViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val post = Post(
-            id = 1,
-            author = "Нетология. Университет интернет-профессий будущего",
-            published = "21 мая в 18:36",
-            content = "Привет, это новая Нетология! Когда-то Нетология начиналась с интенсивов по онлайн-маркетингу." +
-                    "Затем появились курсы по дизайну, разработке, аналитике и управлению. Мы растём сами и" +
-                    " помогаем расти студентам: от новичков до уверенных профессионалов. Но самое важное" +
-                    " остаётся с нами: мы верим, что в каждом уже есть сила, которая заставляет хотеть больше," +
-                    " целиться выше, бежать быстрее. Наша миссия — помочь встать на путь роста" +
-                    " и начать цепочку перемен → http://netolo.gy/fyb\""
-        )
-        with(binding) {
-            author.text = post.author
-            content.text = post.content
-            published.text = post.published
-            liked.text = quantityWritingRule(post.likes)
-            shared.text = quantityWritingRule(post.shares)
-            looked.text = quantityWritingRule(post.looks)
-
-            if (post.likeByMe) {
-                heart.setImageResource(R.drawable.heart_red_24dp)
-            }
-
-            heart.setOnClickListener {
-                post.likeByMe = !post.likeByMe
-
+        viewModel.data.observe(this) { post ->
+            with(binding) {
+                author.text = post.author
+                content.text = post.content
+                published.text = post.published
+                liked.text = quantityWritingRule(post.likes)
+                shared.text = quantityWritingRule(post.shares)
+                looked.text = quantityWritingRule(post.looks)
                 heart.setImageResource(
                     if (post.likeByMe) {
                         R.drawable.heart_red_24dp
@@ -44,29 +29,22 @@ class MainActivity : AppCompatActivity() {
                         R.drawable.heart_white_24dp
                     }
                 )
-                post.likes += if (post.likeByMe) 1 else -1
-                liked.text = quantityWritingRule(post.likes)
+            }
+        }
+
+            binding.heart.setOnClickListener {
+                viewModel.like()
             }
 
-            share.setOnClickListener {
-                post.shares += 1
-                shared.text = quantityWritingRule(post.shares)
+            binding.share.setOnClickListener {
+//                post.shares += 1
+//                shared.text = quantityWritingRule(post.shares)
             }
 
-            eye.setOnClickListener {
-                post.looks += 1
-                looked.text = quantityWritingRule(post.looks)
+            binding.eye.setOnClickListener {
+//                post.looks += 1
+//                looked.text = quantityWritingRule(post.looks)
             }
-//          Test start
-//            binding.root.setOnClickListener{
-//                val test = post.shares
-//            }
-//
-//            avatar.setOnClickListener{
-//                val test = post.shares
-//            }
-//          Test finish
-//
         }
     }
 
@@ -96,4 +74,3 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
-}
