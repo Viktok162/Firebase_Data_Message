@@ -1,4 +1,4 @@
-## Домашнее задание к занятию «2.1. Обработка событий в Android»
+## Домашнее задание к занятию «2.2. Архитектура: MVVM»
 
 
-![Screenshot](img/Screenshot_Image_472_1000.png)
+![Screenshot](img/Screenshot_MVVM_edit2_1000x472.png)
