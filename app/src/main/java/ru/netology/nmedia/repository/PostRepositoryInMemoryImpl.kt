@@ -27,8 +27,6 @@ class PostRepositoryInMemoryImpl: PostRepository {
         ),
     )
 
-
-
     private val data = MutableLiveData(posts)
 
     override fun get(): LiveData<List<Post>> = data
