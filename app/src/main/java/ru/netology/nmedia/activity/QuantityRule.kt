@@ -23,6 +23,5 @@ fun quantityWritingRule(number: Int): String {
         if (numHundOfThous == 0) {
             return numMill.toString() + "M"
         } else return numMill.toString() + "." + numHundOfThous + "M"
-
     }
 }

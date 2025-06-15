@@ -16,9 +16,18 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val adapter = PostAdapter{ post ->
-            viewModel.like(post.id)
-        }
+        val adapter = PostAdapter(
+            onLikeListener = { post ->
+                viewModel.like(post.id)
+            },
+            onShareListener = { post ->
+                viewModel.share(post.id)
+            },
+            onLookListener = { post ->
+                viewModel.look(post.id)
+            }
+        )
+
         binding.list.adapter = adapter
 
         viewModel.data.observe(this) { posts ->
