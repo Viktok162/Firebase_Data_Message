@@ -1,4 +1,4 @@
-## Домашнее задание к занятию «2.2. Архитектура: MVVM»
+## Домашнее задание к занятию «2.3. Отображение списков: RecyclerView»
 
 
-![Screenshot](img/Screenshot_MVVM_edit2_1000x472.png)
+![Screenshot](img/Screenshot_RecyclerView_edit1_472x1000.png)
