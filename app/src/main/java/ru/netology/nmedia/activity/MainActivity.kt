@@ -22,39 +22,7 @@ class MainActivity : AppCompatActivity() {
         binding.list.adapter = adapter
 
         viewModel.data.observe(this) { posts ->
-            adapter.list = posts
-
+            adapter.submitList(posts)
         }
     }
 }
-
-
-//            binding.container.removeAllViews()
-//            posts.forEach { post ->
-//                CardPostBinding.inflate(layoutInflater, binding.container, true).apply {
-//                    author.text = post.author
-//                    content.text = post.content
-//                    published.text = post.published
-//                    liked.text = quantityWritingRule(post.likes)
-//                    shared.text = quantityWritingRule(post.shares)
-//                    looked.text = quantityWritingRule(post.looks)
-//                    heart.setImageResource(
-//                        if (post.likeByMe) {
-//                            R.drawable.heart_red_24dp
-//                        } else {
-//                            R.drawable.heart_white_24dp
-//                        }
-//                    )
-//                    heart.setOnClickListener {
-//                        viewModel.like(post.id)
-//                    }
-//
-//                    share.setOnClickListener {
-//                        viewModel.share(post.id)
-//                    }
-//
-//                    eye.setOnClickListener {
-//                        viewModel.look(post.id)
-//                    }
-//                }.root
-//            }
