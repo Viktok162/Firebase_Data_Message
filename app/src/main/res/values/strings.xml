@@ -11,6 +11,7 @@
     <string name="heart">Icon heart</string>
     <string name="share">Icon share</string>
     <string name="eye">Icon eye</string>
+    <string name="menu_remove">Remove</string>
 
 
 </resources>

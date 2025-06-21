@@ -25,6 +25,9 @@ class MainActivity : AppCompatActivity() {
             },
             onLookListener = { post ->
                 viewModel.look(post.id)
+            },
+            onRemoveListener = { post ->
+                viewModel.removeById(post.id)
             }
         )
 

@@ -8,4 +8,5 @@
     <string name="heart">значок сердца</string>
     <string name="share">значок поделиться</string>
     <string name="eye">значок глаз</string>
+    <string name="menu_remove">Удалить</string>
 </resources>
