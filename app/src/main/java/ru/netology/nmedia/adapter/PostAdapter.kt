@@ -11,11 +11,6 @@ import ru.netology.nmedia.activity.quantityWritingRule
 import ru.netology.nmedia.databinding.CardPostBinding
 import ru.netology.nmedia.dto.Post
 
-typealias OnLikeListener = (post: Post) -> Unit
-typealias OnShareListener = (post: Post) -> Unit
-typealias OnLookListener = (post: Post) -> Unit
-typealias OnRemoveListener = (post: Post) -> Unit
-
 interface OnInteractorListener{
     fun onLike(post:Post)
     fun onRemove(post:Post)
@@ -26,13 +21,6 @@ interface OnInteractorListener{
 
 class PostAdapter(
     private val onInteractorListener: OnInteractorListener
-
-
-//    private val onLikeListener: OnLikeListener,
-//    private val onShareListener: OnShareListener,
-//    private val onLookListener: OnLookListener,
-//    private val onRemoveListener: OnRemoveListener,
-
 ) : ListAdapter<Post, PostViewHolder>(PostDiffCallBack) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
@@ -49,11 +37,7 @@ class PostAdapter(
 class PostViewHolder(
     private val binding: CardPostBinding,
     private val onInteractorListener: OnInteractorListener
-//    private val onLikeListener: OnLikeListener,
-//    private val onShareListener: OnShareListener,
-//    private val onLookListener: OnLookListener,
-//    private val onRemoveListener: OnRemoveListener
-) : RecyclerView.ViewHolder(binding.root) {
+): RecyclerView.ViewHolder(binding.root) {
     fun bind(post: Post) = with(binding){
         author.text = post.author
         content.text = post.content
@@ -76,11 +60,6 @@ class PostViewHolder(
         eye.setOnClickListener {
             onInteractorListener.onEye(post)
         }
-
-//
-//        eye.setOnClickListener {
-//            onLookListener(post)
-//        }
 
         menu.setOnClickListener {
             PopupMenu(it.context, it).apply{

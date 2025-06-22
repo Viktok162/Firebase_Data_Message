@@ -1,7 +1,6 @@
 package ru.netology.nmedia.activity
 
 import android.content.Context
-import android.inputmethodservice.InputMethodService
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -47,18 +46,6 @@ class MainActivity : AppCompatActivity() {
                     viewModel.look(post.id)
                 }
             }
-//            onLikeListener = { post ->
-//                viewModel.like(post.id)
-//            },
-//            onShareListener = { post ->
-//                viewModel.share(post.id)
-//            },
-//            onLookListener = { post ->
-//                viewModel.look(post.id)
-//            },
-//            onRemoveListener = { post ->
-//                viewModel.removeById(post.id)
-//            }
         )
 
         binding.list.adapter = adapter
@@ -79,10 +66,8 @@ class MainActivity : AppCompatActivity() {
                     // focusAndShowKeyboard()
                     setText(post.content)
                 }
-
             }
         }
-
 
         with(binding) {
             save.setOnClickListener {
@@ -110,4 +95,3 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
-
