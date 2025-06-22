@@ -9,4 +9,7 @@
     <string name="share">значок поделиться</string>
     <string name="eye">значок глаз</string>
     <string name="menu_remove">Удалить</string>
+    <string name="content">Текст поста</string>
+    <string name="post_text">Текст поста</string>
+    <string name="error_empty_content">Это поле не может быть пустым</string>
 </resources>

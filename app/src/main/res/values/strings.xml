@@ -13,5 +13,8 @@
     <string name="eye">Icon eye</string>
     <string name="menu_remove">Remove</string>
 
+    <string name="post_text">Post text</string>
+    <string name="error_empty_content">Content can not be empty</string> />
+
 
 </resources>

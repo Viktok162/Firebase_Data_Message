@@ -5,10 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import ru.netology.nmedia.dto.Post
 
 class PostRepositoryInMemoryImpl: PostRepository {
-
+    private var index: Long = 1L
     private var posts = listOf(
         Post(
-            id = 6,
+            id = index++,
             author = "Нетология. Университет интернет-профессий будущего",
             published = "21 мая в 18:36",
             content = "Post 6.               Знаний хватит на всех.\n" +
@@ -16,7 +16,7 @@ class PostRepositoryInMemoryImpl: PostRepository {
             likeByMe = false
         ),
         Post(
-            id = 5,
+            id = index++,
             author = "Нетология. Университет интернет-профессий будущего",
             published = "21 мая в 18:36",
             content = "Post 5.      Привет, это новая Нетология!\n Когда-то Нетология начиналась " +
@@ -26,7 +26,7 @@ class PostRepositoryInMemoryImpl: PostRepository {
             likeByMe = false
         ),
         Post(
-            id = 4,
+            id = index++,
             author = "Нетология. Университет интернет-профессий будущего",
             published = "21 мая в 18:36",
             content = "Post 4.               Знаний хватит на всех.\n" +
@@ -34,7 +34,7 @@ class PostRepositoryInMemoryImpl: PostRepository {
             likeByMe = false
         ),
         Post(
-            id = 3,
+            id = index++,
             author = "Нетология. Университет интернет-профессий будущего",
             published = "21 мая в 18:36",
             content = "Post 3.      Привет, это новая Нетология!\n Когда-то Нетология начиналась " +
@@ -44,7 +44,7 @@ class PostRepositoryInMemoryImpl: PostRepository {
             likeByMe = false
         ),
         Post(
-            id = 2,
+            id = index++,
             author = "Нетология. Университет интернет-профессий будущего",
             published = "21 мая в 18:36",
             content = "Post 2.               Знаний хватит на всех.\n" +
@@ -52,7 +52,7 @@ class PostRepositoryInMemoryImpl: PostRepository {
             likeByMe = false
         ),
         Post(
-            id = 1,
+            id = index++,
             author = "Нетология. Университет интернет-профессий будущего",
             published = "21 мая в 18:36",
             content = "Post 1.      Привет, это новая Нетология!\n Когда-то Нетология начиналась " +
@@ -100,5 +100,17 @@ class PostRepositoryInMemoryImpl: PostRepository {
     override fun removeById(id: Long) {
         posts = posts.filter { it.id != id }
         data.value = posts
+    }
+
+    override fun save(post: Post) {
+        posts = listOf(
+            post.copy(
+                id = index++,
+                author = "Me",
+                published = "now"
+            )
+        ) + posts
+        data.value = posts
+        return
     }
 }

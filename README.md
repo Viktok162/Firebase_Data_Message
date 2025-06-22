@@ -1,8 +1,8 @@
-## Домашнее задание к занятию «2.3. Отображение списков: RecyclerView»
+## Домашнее задание к занятию «2.4. CRUD: списки, добавление, удаление, изменение»
 
 
-### Edition 4 DiffUtil
+### Edition 2 creation
 
-![Screenshot](img/Screenshot_RecyclerView_edit4.png)
+![Screenshot](img/Screenshot_CRUD_creation_800.png)
 
 
