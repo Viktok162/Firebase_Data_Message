@@ -16,17 +16,28 @@ typealias OnShareListener = (post: Post) -> Unit
 typealias OnLookListener = (post: Post) -> Unit
 typealias OnRemoveListener = (post: Post) -> Unit
 
+interface OnInteractorListener{
+    fun onLike(post:Post)
+    fun onRemove(post:Post)
+    fun onEdit(post:Post)
+    fun onShare(post: Post)
+    fun onEye(post: Post)
+}
+
 class PostAdapter(
-    private val onLikeListener: OnLikeListener,
-    private val onShareListener: OnShareListener,
-    private val onLookListener: OnLookListener,
-    private val onRemoveListener: OnRemoveListener,
+    private val onInteractorListener: OnInteractorListener
+
+
+//    private val onLikeListener: OnLikeListener,
+//    private val onShareListener: OnShareListener,
+//    private val onLookListener: OnLookListener,
+//    private val onRemoveListener: OnRemoveListener,
 
 ) : ListAdapter<Post, PostViewHolder>(PostDiffCallBack) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
         val binding = CardPostBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return PostViewHolder(binding, onLikeListener, onShareListener, onLookListener, onRemoveListener)
+        return PostViewHolder(binding, onInteractorListener)
     }
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
@@ -37,10 +48,11 @@ class PostAdapter(
 
 class PostViewHolder(
     private val binding: CardPostBinding,
-    private val onLikeListener: OnLikeListener,
-    private val onShareListener: OnShareListener,
-    private val onLookListener: OnLookListener,
-    private val onRemoveListener: OnRemoveListener
+    private val onInteractorListener: OnInteractorListener
+//    private val onLikeListener: OnLikeListener,
+//    private val onShareListener: OnShareListener,
+//    private val onLookListener: OnLookListener,
+//    private val onRemoveListener: OnRemoveListener
 ) : RecyclerView.ViewHolder(binding.root) {
     fun bind(post: Post) = with(binding){
         author.text = post.author
@@ -54,16 +66,21 @@ class PostViewHolder(
         )
 
         heart.setOnClickListener {
-            onLikeListener(post)
+            onInteractorListener.onLike(post)
         }
 
         share.setOnClickListener {
-            onShareListener(post)
+            onInteractorListener.onShare(post)
         }
 
         eye.setOnClickListener {
-            onLookListener(post)
+            onInteractorListener.onEye(post)
         }
+
+//
+//        eye.setOnClickListener {
+//            onLookListener(post)
+//        }
 
         menu.setOnClickListener {
             PopupMenu(it.context, it).apply{
@@ -71,7 +88,11 @@ class PostViewHolder(
                 setOnMenuItemClickListener { item ->
                     when(item.itemId){
                         R.id.remove -> {
-                            onRemoveListener(post)
+                            onInteractorListener.onRemove(post)
+                            true
+                        }
+                        R.id.edit -> {
+                            onInteractorListener.onEdit(post)
                             true
                         }
                         else -> false

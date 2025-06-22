@@ -103,13 +103,22 @@ class PostRepositoryInMemoryImpl: PostRepository {
     }
 
     override fun save(post: Post) {
-        posts = listOf(
-            post.copy(
-                id = index++,
-                author = "Me",
-                published = "now"
-            )
-        ) + posts
+        posts = if(post.id == 0L) {
+             listOf(
+                post.copy(
+                    id = index++,
+                    author = "Me",
+                    published = "now"
+                )
+            ) + posts
+        } else {
+            posts.map{
+                if (post.id == it.id){
+                    it.copy(content = post.content)
+                } else it
+            }
+        }
+
         data.value = posts
         return
     }

@@ -10,8 +10,10 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import ru.netology.nmedia.R
+import ru.netology.nmedia.adapter.OnInteractorListener
 import ru.netology.nmedia.adapter.PostAdapter
 import ru.netology.nmedia.databinding.ActivityMainBinding
+import ru.netology.nmedia.dto.Post
 import ru.netology.nmedia.viewmodel.PostViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -24,18 +26,39 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val adapter = PostAdapter(
-            onLikeListener = { post ->
-                viewModel.like(post.id)
-            },
-            onShareListener = { post ->
-                viewModel.share(post.id)
-            },
-            onLookListener = { post ->
-                viewModel.look(post.id)
-            },
-            onRemoveListener = { post ->
-                viewModel.removeById(post.id)
+            object: OnInteractorListener{
+                override fun onLike(post: Post) {
+                    viewModel.like(post.id)
+                }
+
+                override fun onRemove(post: Post) {
+                    viewModel.removeById(post.id)
+                }
+
+                override fun onEdit(post: Post) {
+                    viewModel.edit(post)
+                }
+
+                override fun onShare(post: Post) {
+                    viewModel.share(post.id)
+                }
+
+                override fun onEye(post: Post) {
+                    viewModel.look(post.id)
+                }
             }
+//            onLikeListener = { post ->
+//                viewModel.like(post.id)
+//            },
+//            onShareListener = { post ->
+//                viewModel.share(post.id)
+//            },
+//            onLookListener = { post ->
+//                viewModel.look(post.id)
+//            },
+//            onRemoveListener = { post ->
+//                viewModel.removeById(post.id)
+//            }
         )
 
         binding.list.adapter = adapter
@@ -48,6 +71,18 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+
+        viewModel.edited.observe(this) { post ->
+            if (post.id != 0L) {
+                with(binding.content) {
+                    requestFocus()
+                    // focusAndShowKeyboard()
+                    setText(post.content)
+                }
+
+            }
+        }
+
 
         with(binding) {
             save.setOnClickListener {
