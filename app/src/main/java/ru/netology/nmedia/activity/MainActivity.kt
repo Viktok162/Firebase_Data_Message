@@ -18,11 +18,13 @@ import ru.netology.nmedia.viewmodel.PostViewModel
 class MainActivity : AppCompatActivity() {
 
     private val viewModel: PostViewModel by viewModels()
+    private var oldContent: String = ""   //  point 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.editingGroup.visibility = View.GONE  // group
 
         val adapter = PostAdapter(
             object: OnInteractorListener{
@@ -61,11 +63,17 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.edited.observe(this) { post ->
             if (post.id != 0L) {
+                oldContent = post.content           //   point 2
                 with(binding.content) {
                     requestFocus()
                     // focusAndShowKeyboard()
                     setText(post.content)
                 }
+                binding.editingGroup.visibility = View.VISIBLE  // group
+            } else{
+                binding.editingGroup.visibility = View.GONE     // group
+                binding.content.setText("")
+                binding.content.clearFocus()
             }
         }
 
@@ -84,6 +92,16 @@ class MainActivity : AppCompatActivity() {
                 content.setText("")
                 content.clearFocus()
                 AndroidUtils.hideKeyboard(it)
+                editingGroup.visibility = View.GONE     //  group
+            }
+
+            buttomCancel.setOnClickListener {
+//                content.setText("")
+                content.setText(oldContent)             //  point 3
+                content.clearFocus()
+                AndroidUtils.hideKeyboard(it)
+                editingGroup.visibility = View.GONE     //  group
+                viewModel.edit(Post(id=0))
             }
         }
     }

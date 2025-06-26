@@ -12,4 +12,8 @@
     <string name="post_text">Текст поста</string>
     <string name="error_empty_content">Это поле не может быть пустым</string>
     <string name="menu_edit">Редактировать</string>
+    <string name="cancel_edit">Отмена редактирования</string>
+    <string name="text_neto">текст</string>
+    <string name="neto_name">Нетология</string>
+    <string name="successful_edit">Готово</string>
 </resources>

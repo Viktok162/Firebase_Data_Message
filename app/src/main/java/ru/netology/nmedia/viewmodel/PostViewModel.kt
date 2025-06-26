@@ -28,6 +28,7 @@ class PostViewModel: ViewModel() {
 
     fun changeContent(content: String) {
         val text = content.trim()
+
         edited.value?.let {
             if (text == it.content) {
                 return@let

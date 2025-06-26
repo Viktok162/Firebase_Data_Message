@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+   
 }
 
 android {
@@ -13,6 +14,7 @@ android {
         targetSdk 35
         versionCode 1
         versionName "1.0"
+        vectorDrawables.useSupportLibrary = true // icon
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -50,4 +52,8 @@ dependencies {
     implementation libs.androidx.lifecycle.livedata.ktx
     implementation libs.androidx.recyclerview
 
+    //implementation libs.material.v190
+    //implementation libs.material.v161
+
+    implementation libs.google.material.v161
 }

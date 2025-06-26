@@ -1,8 +1,8 @@
 ## Домашнее задание к занятию «2.4. CRUD: списки, добавление, удаление, изменение»
 
 
-### Edition 3 creation & editing
+### Edition 5 CRUD & Cancel
 
-![Screenshot](img/Screenshot_CRUD_Edit_800.png)
+![Screenshot](img/Screenshot_CRUD_Cancel.png)
 
 
