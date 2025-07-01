@@ -1,8 +1,8 @@
-## Домашнее задание к занятию «2.4. CRUD: списки, добавление, удаление, изменение»
+## Домашнее задание к занятию «3.1. Material Design»
 
 
-### Edition 5 CRUD & Cancel
+### Edition 1 Material Design
 
-![Screenshot](img/Screenshot_CRUD_Cancel.png)
+![Screenshot](img/Screenshot_Material_Design.png)
 
 

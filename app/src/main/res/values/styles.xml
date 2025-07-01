@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Style.HeartCheckBox" parent="Widget.MaterialComponents.Button">
+        <item name="buttonTint">@color/color_heart</item>
+    </style>
+
+    <style name="Style.HeartButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="iconTint">@color/color_heart</item>
+    </style>
+
+    <style name="Style.CountButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="iconTint">@color/normal</item>
+    </style>
+
+    <style name="Style.OptionsButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="iconTint">@color/normal</item>
+    </style>
+
+</resources>

@@ -46,12 +46,16 @@
         app:layout_constraintTop_toBottomOf="@+id/author"
         tools:text="@sample/posts.json/data/published" />
 
-    <ImageView
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/menu"
+        style="@style/Style.OptionsButton"
         android:layout_width="@dimen/avatar_size"
         android:layout_height="@dimen/avatar_size"
         android:contentDescription="@string/menu"
-        android:src="@drawable/baseline_more_vert_24"
+        android:text=""
+        android:padding="4dp"
+        app:icon="@drawable/baseline_more_vert_24"
+        app:iconSize="@dimen/icon_big_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -90,73 +94,61 @@
         app:barrierMargin="64dp"
         app:constraint_referenced_ids="content" />
 
-    <ImageButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/heart"
+        style="@style/Style.HeartButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:contentDescription="@string/heart"
-        android:src="@drawable/heart_white_24dp"
+        android:checkable="true"
         android:background="@android:color/transparent"
+        android:textColor="@color/normal"
+        android:textSize="16sp"
+        app:icon="@drawable/ic_heart"
+        app:iconPadding="1dp"
         app:layout_constraintBottom_toTopOf="@id/barrier2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/barrier1" />
+        app:layout_constraintTop_toTopOf="@id/barrier1"
+        tools:text="999"
+        tools:textSize="16sp"
+        />
 
-    <TextView
-        android:id="@+id/liked"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/share"
+        style="@style/Style.CountButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="@string/liked"
+        android:layout_marginStart="@dimen/min_size"
+        android:contentDescription="@string/share"
+        android:background="@android:color/transparent"
+        android:textColor="@color/normal"
         android:textSize="16sp"
+        app:icon="@drawable/share_24dp"
+        app:iconPadding="1dp"
         app:layout_constraintBottom_toTopOf="@id/barrier2"
         app:layout_constraintStart_toEndOf="@id/heart"
-        app:layout_constraintTop_toTopOf="@id/barrier1" />
+        app:layout_constraintTop_toTopOf="@id/barrier1"
+        tools:text="998"
+        tools:textSize="16sp"
+        />
 
-    <ImageButton
-        android:id="@+id/share"
-        android:layout_width="@dimen/icon_size"
-        android:layout_height="@dimen/icon_size"
-        android:layout_marginStart="@dimen/common_space"
-        android:contentDescription="@string/share"
-        android:src="@drawable/share_24dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@id/barrier2"
-        app:layout_constraintStart_toEndOf="@id/liked"
-        app:layout_constraintTop_toTopOf="@id/barrier1" />
-
-    <TextView
-        android:id="@+id/shared"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="@string/shared"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@id/barrier2"
-        app:layout_constraintStart_toEndOf="@id/share"
-        app:layout_constraintTop_toTopOf="@id/barrier1" />
-
-    <TextView
-        android:id="@+id/looked"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:text="@string/looked"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@id/barrier2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/barrier1" />
-
-    <ImageButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/eye"
-        android:layout_width="@dimen/icon_size"
-        android:layout_height="@dimen/icon_size"
+        style="@style/Style.CountButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:contentDescription="@string/eye"
-        android:src="@drawable/eye_24dp"
         android:background="@android:color/transparent"
+        android:textColor="@color/normal"
+        android:textSize="16sp"
+        app:icon="@drawable/eye_24dp"
+        app:iconPadding="1dp"
         app:layout_constraintBottom_toTopOf="@id/barrier2"
-        app:layout_constraintEnd_toStartOf="@id/looked"
-        app:layout_constraintTop_toTopOf="@id/barrier1" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/barrier1"
+        tools:text="997"
+        tools:textSize="16sp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

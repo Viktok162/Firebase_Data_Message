@@ -42,23 +42,28 @@ class PostViewHolder(
         author.text = post.author
         content.text = post.content
         published.text = post.published
-        liked.text = quantityWritingRule(post.likes)
-        shared.text = quantityWritingRule(post.shares)
-        looked.text = quantityWritingRule(post.looks)
-        heart.setImageResource(
-            if (post.likeByMe)R.drawable.heart_red_24dp else R.drawable.heart_white_24dp
-        )
+
+        heart.apply{
+            isChecked = post.likeByMe
+            text = quantityWritingRule(post.likes)
+        }
 
         heart.setOnClickListener {
             onInteractorListener.onLike(post)
         }
 
-        share.setOnClickListener {
-            onInteractorListener.onShare(post)
+        share.apply {
+            share.setOnClickListener {
+                onInteractorListener.onShare(post)
+            }
+            text = quantityWritingRule(post.shares)
         }
 
-        eye.setOnClickListener {
-            onInteractorListener.onEye(post)
+        eye.apply {
+            eye.setOnClickListener {
+                onInteractorListener.onEye(post)
+            }
+            text = quantityWritingRule(post.looks)
         }
 
         menu.setOnClickListener {
