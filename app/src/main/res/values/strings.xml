@@ -23,6 +23,6 @@
     <string name="edit_message" translatable="false">Edit message</string>
     <string name="chooser_share_post">Choice</string>
     <string name="fab" translatable="false">floatingActionButton</string>
-    <string name="error_empty_post">post is blank</string>
+    <string name="error_empty_post">Post is blank</string>
 
 </resources>

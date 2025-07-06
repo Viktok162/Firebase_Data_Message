@@ -17,4 +17,5 @@
     <string name="neto_name">Нетология</string>
     <string name="successful_edit">Готово</string>
     <string name="chooser_share_post">Выбор</string>
+    <string name="error_empty_post">Пустой пост</string>
 </resources>
