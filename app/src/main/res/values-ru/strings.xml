@@ -16,4 +16,5 @@
     <string name="text_neto">текст</string>
     <string name="neto_name">Нетология</string>
     <string name="successful_edit">Готово</string>
+    <string name="chooser_share_post">Выбор</string>
 </resources>
