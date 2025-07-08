@@ -11,9 +11,6 @@ import ru.netology.nmedia.R
 import ru.netology.nmedia.activity.quantityWritingRule
 import ru.netology.nmedia.databinding.CardPostBinding
 import ru.netology.nmedia.dto.Post
-import android.content.Intent
-import android.util.Log
-import androidx.core.net.toUri
 
 interface OnInteractorListener{
     fun onLike(post:Post)
@@ -21,6 +18,7 @@ interface OnInteractorListener{
     fun onEdit(post:Post)
     fun onShare(post: Post)
     fun onEye(post: Post)
+    fun onPlayVideo(post: Post)
 }
 
 class PostAdapter(
@@ -94,15 +92,8 @@ class PostViewHolder(
             binding.videoMsc.visibility = View.VISIBLE
             binding.buttonPlay.visibility = View.VISIBLE
 
-
-            val videoUri = post.video.toUri()
-
             val clickListener = View.OnClickListener {
-                val intent = Intent(Intent.ACTION_VIEW, videoUri)
-
-                if (it.context.packageManager.resolveActivity(intent, 0) != null) {
-                    it.context.startActivity(intent)
-                }
+                onInteractorListener.onPlayVideo(post)
             }
             binding.videoContainer.setOnClickListener(clickListener)
             binding.videoMsc.setOnClickListener(clickListener)

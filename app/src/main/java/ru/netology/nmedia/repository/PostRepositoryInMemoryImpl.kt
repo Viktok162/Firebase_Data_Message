@@ -14,7 +14,7 @@ class PostRepositoryInMemoryImpl: PostRepository {
             content = "Post 6.               Знаний хватит на всех.\n" +
                       "Наша миссия — помочь встать на путь роста и начать цепочку перемен.",
             likeByMe = false,
-                    video = "https://rutube.ru/video/6550a91e7e523f9503bed47e4c46d0cb"
+            video = "https://rutube.ru/video/6550a91e7e523f9503bed47e4c46d0cb"
         ),
         Post(
             id = index++,
@@ -60,7 +60,8 @@ class PostRepositoryInMemoryImpl: PostRepository {
                     "с интенсивов по онлайн-маркетингу. Затем появились курсы по дизайну," +
                     " разработке, аналитике и управлению. Наша миссия — помочь встать на" +
                     " путь роста и начать цепочку перемен → http://netolo.gy/fyb\"",
-            likeByMe = false
+            likeByMe = false,
+            //video = "https://kinescope.io/jNmYrZamzQHQDCS9Zs6bLQ"
         )
     )
 
