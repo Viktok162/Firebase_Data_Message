@@ -1,8 +1,8 @@
 ## Домашнее задание к занятию «3.2. Intents и организация навигации»
 
 
-### Edition 3 Intents Editing
+### Edit 1 Intents Video
 
-![Screenshot](img/Screenshot_editing.png)
+![Screenshot](img/Screenshot_Intents_Video.png)
 
 

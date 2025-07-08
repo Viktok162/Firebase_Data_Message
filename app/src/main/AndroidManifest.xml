@@ -18,17 +18,17 @@
         <activity
             android:name=".activity.NewPostActivity"
             android:exported="false" />
+
         <activity
             android:name=".activity.IntentHandlerActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
-
                 <category android:name="android.intent.category.DEFAULT" />
-
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".activity.MainActivity"
             android:exported="true">
@@ -39,5 +39,6 @@
             </intent-filter>
         </activity>
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

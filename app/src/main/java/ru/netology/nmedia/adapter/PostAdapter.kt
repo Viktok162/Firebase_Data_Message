@@ -1,6 +1,7 @@
 package ru.netology.nmedia.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.PopupMenu
 import androidx.recyclerview.widget.DiffUtil
@@ -10,6 +11,9 @@ import ru.netology.nmedia.R
 import ru.netology.nmedia.activity.quantityWritingRule
 import ru.netology.nmedia.databinding.CardPostBinding
 import ru.netology.nmedia.dto.Post
+import android.content.Intent
+import android.util.Log
+import androidx.core.net.toUri
 
 interface OnInteractorListener{
     fun onLike(post:Post)
@@ -83,6 +87,31 @@ class PostViewHolder(
                     }
                 }
             }.show()
+        }
+
+        if (!post.video.isNullOrBlank()) {
+            binding.videoContainer.visibility = View.VISIBLE
+            binding.videoMsc.visibility = View.VISIBLE
+            binding.buttonPlay.visibility = View.VISIBLE
+
+
+            val videoUri = post.video.toUri()
+
+            val clickListener = View.OnClickListener {
+                val intent = Intent(Intent.ACTION_VIEW, videoUri)
+
+                if (it.context.packageManager.resolveActivity(intent, 0) != null) {
+                    it.context.startActivity(intent)
+                }
+            }
+            binding.videoContainer.setOnClickListener(clickListener)
+            binding.videoMsc.setOnClickListener(clickListener)
+            binding.buttonPlay.setOnClickListener(clickListener)
+
+        } else {
+            binding.videoContainer.visibility = View.GONE
+            binding.videoMsc.visibility = View.GONE
+            binding.buttonPlay.visibility = View.GONE
         }
     }
 }

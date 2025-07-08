@@ -84,7 +84,7 @@
         android:layout_height="wrap_content"
         app:barrierDirection="bottom"
         app:barrierMargin="@dimen/common_space"
-        app:constraint_referenced_ids="content" />
+        app:constraint_referenced_ids="videoContainer" />
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier2"
@@ -150,5 +150,32 @@
         app:layout_constraintTop_toTopOf="@id/barrier1"
         tools:text="997"
         tools:textSize="16sp"/>
+
+    <FrameLayout
+        android:id="@+id/videoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/content"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/videoMsc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_msc_film" />
+
+        <ImageButton
+            android:id="@+id/buttonPlay"
+            android:layout_width="@dimen/avatar_size"
+            android:layout_height="@dimen/avatar_size"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_play_24"
+            app:tint="@color/white" />
+
+    </FrameLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

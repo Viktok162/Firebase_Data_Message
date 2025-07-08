@@ -13,7 +13,8 @@ class PostRepositoryInMemoryImpl: PostRepository {
             published = "21 мая в 18:36",
             content = "Post 6.               Знаний хватит на всех.\n" +
                       "Наша миссия — помочь встать на путь роста и начать цепочку перемен.",
-            likeByMe = false
+            likeByMe = false,
+                    video = "https://rutube.ru/video/6550a91e7e523f9503bed47e4c46d0cb"
         ),
         Post(
             id = index++,
@@ -29,8 +30,8 @@ class PostRepositoryInMemoryImpl: PostRepository {
             id = index++,
             author = "Нетология. Университет интернет-профессий будущего",
             published = "21 мая в 18:36",
-            content = "Post 4.               Знаний хватит на всех.\n" +
-                    "Наша миссия — помочь встать на путь роста и начать цепочку перемен",
+            content = "Post 4.               Видео.\n" +
+                    "Пост с видео",
             likeByMe = false
         ),
         Post(
