@@ -45,8 +45,9 @@ dependencies {
     implementation libs.androidx.lifecycle.viewmodel.ktx
     implementation libs.androidx.lifecycle.livedata.ktx
     implementation libs.androidx.activity
-
     implementation libs.google.material.v161
+
+    implementation "com.google.code.gson:gson:2.11.0"
 
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit

@@ -1,8 +1,8 @@
-## Домашнее задание к занятию «3.2. Intents и организация навигации»
+## Домашнее задание к занятию «3.3. Хранение данных»
 
 
-### Intents Video edit 2
+###  Saving data to a file      edit 1
 
-![Screenshot](img/Screenshot_Intents_Video.png)
+![Screenshot](img/Screenshot_FileStorage.png)
 
 
