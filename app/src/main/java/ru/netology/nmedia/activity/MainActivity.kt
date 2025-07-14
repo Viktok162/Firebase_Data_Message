@@ -55,6 +55,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     val intent2 = Intent.createChooser(intent,getString(R.string.chooser_share_post))
                     startActivity(intent2)
+                    viewModel.share(post.id)
                 }
 
                 override fun onEye(post: Post) {
