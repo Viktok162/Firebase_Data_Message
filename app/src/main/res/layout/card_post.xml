@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="@dimen/common_space"
-    tools:context=".activity.MainActivity"
+    tools:context=".activity.AppActivity"
     tools:ignore="ExtraText">
 
     <ImageView

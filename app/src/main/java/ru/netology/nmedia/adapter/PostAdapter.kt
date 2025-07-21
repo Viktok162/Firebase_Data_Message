@@ -19,6 +19,7 @@ interface OnInteractorListener{
     fun onShare(post: Post)
     fun onEye(post: Post)
     fun onPlayVideo(post: Post)
+    fun onPostClick(post: Post)
 }
 
 class PostAdapter(
@@ -104,6 +105,12 @@ class PostViewHolder(
             binding.videoMsc.visibility = View.GONE
             binding.buttonPlay.visibility = View.GONE
         }
+
+        content.setOnClickListener {
+            onInteractorListener.onPostClick(post)
+        }
+
+
     }
 }
 
