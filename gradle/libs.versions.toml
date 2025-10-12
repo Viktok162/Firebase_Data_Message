@@ -2,6 +2,7 @@
 agp = "8.10.1"
 
 comGoogleAndroidMaterialMaterial = "1.8.0"
+fragmentKtx = "1.8.9"
 googleMaterial = "1.9.0"
 googleMaterialVersion = "1.12.0"
 gson = "2.11.0"
@@ -16,15 +17,22 @@ material = "1.12.0"
 activity = "1.10.1"
 constraintlayout = "2.2.1"
 materialVersion = "1.12.0"
+navigationFragmentKtx = "2.9.5"
 recyclerview = "1.4.0"
 recyclerviewVersion = "1.4.0"
+roomRuntimeAndroid = "2.8.2"
 
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtx" }
 androidx-lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycleViewmodelKtx" }
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationFragmentKtx" }
 androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntimeAndroid" }
+androidx-room-runtime-android = { module = "androidx.room:room-runtime-android", version.ref = "roomRuntimeAndroid" }
 google-material-v161 = { module = "com.google.android.material:material", version.ref = "googleMaterialVersion" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }

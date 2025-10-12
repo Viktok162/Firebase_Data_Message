@@ -1,8 +1,8 @@
-## Домашнее задание к занятию «3.4. Fragments, FragmentManager»
+## Домашнее задание к занятию «Библиотека Room»
 
 
-###  Fragments      edit 2
+###  ROOM      edit 1
 
-![Screenshot](img/Screenshot_Fragments_2.png)
+![Screenshot](img/Screenshot_Room_800.png)
 
 
