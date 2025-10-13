@@ -23,11 +23,11 @@ class PostRepositoryImpl(
     }
 
     override fun share(id: Long) {
-        TODO("Not yet implemented")
+        dao.share(id)
     }
 
     override fun look(id: Long) {
-        TODO("Not yet implemented")
+        dao.look(id)
     }
 
     override fun save(post: Post) {
