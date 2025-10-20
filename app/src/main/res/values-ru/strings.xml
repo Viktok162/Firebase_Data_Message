@@ -18,4 +18,5 @@
     <string name="successful_edit">Готово</string>
     <string name="chooser_share_post">Выбор</string>
     <string name="error_empty_post">Пустой пост</string>
+    <string name="google_play_unavailable">Google Play Services недоступны</string>
 </resources>

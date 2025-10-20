@@ -25,4 +25,7 @@
     <string name="fab" translatable="false">floatingActionButton</string>
     <string name="error_empty_post">Post is blank</string>
 
+    <string name="google_play_unavailable">Google Play Services unavailable</string>
+
+
 </resources>

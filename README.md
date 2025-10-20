@@ -1,8 +1,8 @@
-## Домашнее задание к занятию «Библиотека Room»
+## Домашнее задание к занятию «Notifications & Pushes»
 
 
-###  ROOM      edit 2
+###     Notifications   edit 1
 
-![Screenshot](img/Screenshot_Room_800.png)
+![Screenshot](img/Screenshot_Notification_800.png)
 
 
