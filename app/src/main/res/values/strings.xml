@@ -27,5 +27,9 @@
 
     <string name="google_play_unavailable">Google Play Services unavailable</string>
 
+    <string name="channel_remote_name">Channel of Push</string>
+    <string name="channel_remote_description">Push by Like</string>
+    <string name="notification_user_liked">%1$s liked post of %2$s</string>
+
 
 </resources>

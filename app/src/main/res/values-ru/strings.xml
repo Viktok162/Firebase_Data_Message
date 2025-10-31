@@ -19,4 +19,7 @@
     <string name="chooser_share_post">Выбор</string>
     <string name="error_empty_post">Пустой пост</string>
     <string name="google_play_unavailable">Google Play Services недоступны</string>
+    <string name="channel_remote_name">Канал уведомлений</string>
+    <string name="channel_remote_description">Уведомление о лайках</string>
+    <string name="notification_user_liked">%s лайкнул пост %s</string>
 </resources>
